@@ -13,7 +13,7 @@ void main() async{
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
-
+        ChangeNotifierProvider(create: (context) => HabitDatabase())
       ],
         child: const MyApp(),
       ),
