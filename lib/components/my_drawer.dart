@@ -10,40 +10,28 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         backgroundColor: Theme.of(context).colorScheme.surface,
-        child: Padding(
-            padding: const EdgeInsets.only(left: 25.0),
-            child: Column(
-              children: [
-                DrawerHeader(child: Center(child: Text('Theme',style: TextStyle(
-                          fontSize: 24,
-                          color: Theme.of(context).colorScheme.inversePrimary)))),
-                ListTile(
-                  title: Text('Dark Mode ',
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).colorScheme.inversePrimary)),
-                  trailing: CupertinoSwitch(
-                      value: Provider.of<ThemeProvider>(context).isDarkMode,
-                      onChanged: (value) =>
-                          Provider.of<ThemeProvider>(context, listen: false)
-                              .toggleTheme()),
-                )
-              ],
-            ) /* Row(
-            children: [
-              Text('Dark Mode ',
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Center(
+                    child: Text('Theme',
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .inversePrimary)))),
+            ListTile(
+              title: Text('Dark Mode ',
                   style: TextStyle(
-                      fontSize: 18,
-                      color: Theme.of(context)
-                          .colorScheme
-                          .inversePrimary)),
-              CupertinoSwitch(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.inversePrimary)),
+              trailing: CupertinoSwitch(
                   value: Provider.of<ThemeProvider>(context).isDarkMode,
                   onChanged: (value) =>
                       Provider.of<ThemeProvider>(context, listen: false)
                           .toggleTheme()),
-            ],
-          ), */
-            ));
+            )
+          ],
+        ));
   }
 }
