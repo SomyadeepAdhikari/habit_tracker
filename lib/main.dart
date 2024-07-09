@@ -4,7 +4,7 @@ import 'package:habit_tracker/pages/home_page.dart';
 import 'package:habit_tracker/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Initialise database
   await HabitDatabase.initialize();
@@ -15,8 +15,8 @@ void main() async{
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => HabitDatabase())
       ],
-        child: const MyApp(),
-      ),
+      child: const MyApp(),
+    ),
   );
 }
 
